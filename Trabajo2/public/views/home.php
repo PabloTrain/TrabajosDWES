@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>INICIO</h1>
-  <h2>Bienvenido <?php echo $_COOKIE["nombre"];?></h2>
+    <h2>Bienvenido <?php echo $_SESSION["usuario"];?></h2>
   <h4>¿Qué quieres hacer?</h4>
   <ul>
       <a href="?method=crearContacto"><li>Crear contacto</li></a>
