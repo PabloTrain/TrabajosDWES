@@ -17,10 +17,25 @@
         if($registros->rowCount()>0){
             //Si hay muestra el número de personas
             echo "Personas agendadas: " . $registros->rowCount() .".<br>";
+            echo "<table border='2'";
+            echo "<tr>";
+                echo "<td>Nombre</td>";
+                echo "<td>Apellidos</td>";
+                echo "<td>Dirección</td>";
+                echo "<td>Telefono</td>";
+            echo "</tr>";
+            
             foreach ($registros as $fila){
-                //Muestra todos los datos de la/s persona/s
-                echo "Nombre: " . $fila["nombre"]. " ,apellidos: " . $fila["apellidos"] . " ,dirección: " . $fila["direccion"] . " ,telefono: " . $fila["telefono"] . ".<br>";
+                echo "<tr>";
+                    //Muestra todos los datos de la/s persona/s
+                    echo "<td>" . $fila["nombre"] . "</td>";
+                    echo "<td>" . $fila["apellidos"] . "</td>";
+                    echo "<td>" . $fila["direccion"] . "</td>";
+                    echo "<td>" . $fila["telefono"] . "</td>";
+                echo "</tr>";
             }
+            
+            echo "</table>";
         //Si no hay lo indica
         }else{
             echo "No hay ninguna persona agendada.";
@@ -37,10 +52,23 @@
         if($registros->rowCount()>0){
             //Si hay muestra el número de empresas
             echo "Empresas agendadas: " . $registros->rowCount() .".<br>";
+            echo "<table border='2'";
+            echo "<tr>";
+                echo "<td>Nombre</td>";
+                echo "<td>Dirección</td>";
+                echo "<td>Telefono</td>";
+                echo "<td>Email</td>";
+            echo "</tr>";
             foreach ($registros as $fila){
                 //Muestra todos los datos de la/s empresa/s
-                echo "Nombre: " . $fila["nombre"]. " ,dirección: " . $fila["direccion"] . " ,telefono: " . $fila["telefono"] . " ,email: " . $fila["email"] . ".<br>";
+                echo "<tr>";
+                    echo "<td>" . $fila["nombre"] . "</td>";
+                    echo "<td>" . $fila["direccion"] . "</td>";
+                    echo "<td>" . $fila["telefono"] . "</td>";
+                    echo "<td>" . $fila["email"] . "</td>";
+                echo "</tr>";
             }
+            echo "</table>";
         //Si no hay lo indica
         }else{
             echo "No hay ninguna empresa agendada.";
